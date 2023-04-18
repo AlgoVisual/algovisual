@@ -1,10 +1,10 @@
 package com.algovisual.algovisual.view
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import com.algovisual.algovisual.components.AlgorithmList
+import com.algovisual.algovisual.components.AlgorithmListItem
 import com.algovisual.algovisual.models.Algorithm
 
 @Composable
@@ -39,11 +39,14 @@ fun HomeScreen() {
         ),
     )
 
-    return Column(
+    return LazyColumn(
         modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
+            .fillMaxWidth()
     ) {
-        AlgorithmList(algorithms)
+        algorithms.forEach { algorithm ->
+            item {
+                AlgorithmListItem(algorithm = algorithm)
+            }
+        }
     }
 }

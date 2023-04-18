@@ -3,6 +3,7 @@ package com.algovisual.algovisual.components
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.material3.Divider
 import androidx.compose.runtime.Composable
@@ -17,7 +18,8 @@ fun AlgorithmListItem(algorithm: Algorithm) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(100.dp),
+            .height(100.dp)
+            .padding(horizontal = 16.dp)
     ) {
         Text(
             text = "Algorithm ${algorithm.name}",
